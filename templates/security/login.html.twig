@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+<div class="body-login mt-5 bg-red p-t-180 p-b-100 font-robo">
+    <div class="container h-100">
+		<div class="d-flex justify-content-center h-100 mt-5 pt-5">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container ">
+						{# <img src="https://previews.123rf.com/images/09910190/099101901610/09910190161000051/68163182-ic%C3%B4ne-de-v%C3%A9lo-noir-ic%C3%B4ne-de-cycle-et-ic%C3%B4ne-de-v%C3%A9lo-logo-de-v%C3%A9lo-de-montagne-illustration-vectorielle.jpg" class="brand_logo" alt="Logo"> #}
+						<img src="{{asset('build/images/logo-filea.png')}}" class="brand_logo pb-4 pl-2" alt="Logo">
+
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container mt-5">
+					<form action="{#{{ path('security_login')}}#}" method="post">
+                    <div class="input-group mb-1 ">
+                        <a href=""><p class="text-test">Accéder au test de sélection <img src="{{asset('build/images/check.png')}}" width='50px' alt=""></p></a>
+					</div>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" name="_username" class="form-control input_user" value="" placeholder="Adresse email">
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" name="_password" class="form-control input_pass" value="" placeholder="Mot de passe">
+						</div>
+						<div class="d-flex justify-content-center mt-3 login_container">
+                            <button type="submit" name="button" class="btn login_btn">Se connecter</button>
+                        </div>
+					</form>
+				</div>
+		
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						{# Vous n'avez pas un compte? <a href="{{ path ("security_registration") }}" class="ml-2">S'inscrire</a> #}
+					</div>
+					<div class="d-flex justify-content-center links">
+						<a href="{#{{path ("security_reset")}}#}">Mot de passe oublié ?</a>
+					</div>
+				</div>
+			</div>
+            <!-- /.user_card -->
+		</div>
+         <!-- /.d-flex -->
+	</div>
+     <!-- /.container -->
+</div>
+<!-- /.body_login -->
+{% endblock %}
